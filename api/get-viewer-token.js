@@ -1,6 +1,9 @@
 export default async function handler(req, res) {
     if (req.method !== 'POST') return res.status(405).end();
-  
+
+    const { ip } = await fetch('https://api.ipify.org?format=json').then(r => r.json());
+    console.log('Vercel outbound IP:', ip); // add this ip to server allow list
+
     const { doc_id, pages = '*' } = req.body;
     const response = await fetch(`${process.env.BLINKDOC_API}/api/session`, {
       method: 'POST',
