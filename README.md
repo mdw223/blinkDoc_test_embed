@@ -76,6 +76,8 @@ export default async function handler(req, res) {
 
 5. Push to GitHub → go to [vercel.com](https://vercel.com) → **Import Project** → select your repo.
 
+   > **IP allowlist:** Vercel's serverless functions make outbound requests from a fixed set of IP addresses. You must add Vercel's outbound IPs to blinkDoc's server allowlist, otherwise the `POST /api/session` call will be blocked. The current Vercel outbound IP is logged to the Vercel function logs on each request (look for `Vercel outbound IP:` in the `get-viewer-token` function log). Add that IP in the blinkDoc admin under Settings → Allowed IPs (or equivalent).
+
 6. Under **Environment Variables** in the Vercel dashboard, add:
    ```
    BLINKDOC_API       = https://api.yourdomain.com

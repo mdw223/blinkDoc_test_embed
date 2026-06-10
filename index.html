@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>blinkDoc Embed Test</title>
+  <style>body { font-family: sans-serif; padding: 20px; }</style>
+</head>
+<body>
+  <nav style="margin-bottom:16px;font-size:14px;">
+    <a href="/" style="color:#0070f3;text-decoration:none;margin-right:16px;font-weight:bold;">Script embed</a>
+    <a href="/npm-viewer" style="color:#0070f3;text-decoration:none;">npm package viewer &rarr;</a>
+  </nav>
+  <h1>blinkDoc Embed Test</h1>
+  <div
+    data-blinkdoc-doc-id="%VITE_BLINKDOC_DOC_ID%"
+    data-blinkdoc-session-url="/api/get-viewer-token"
+  ></div>
+  <script src="%VITE_BLINKDOC_API%/static/embed.js"></script>
+</body>
+</html>
