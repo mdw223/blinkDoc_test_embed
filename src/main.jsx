@@ -22,6 +22,7 @@ function App() {
         {page !== null && <span> &nbsp;|&nbsp; Page: {page}</span>}
       </p>
       <BlinkDocViewer
+        apiUrl={import.meta.env.VITE_BLINKDOC_API}
         sessionUrl="/api/get-viewer-token"
         docId={DOC_ID}
         pages="*"
